@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "@fontsource/plus-jakarta-sans/300.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #e11d48; /* rose-600 */
+  --color-primary-dark: #be123c; /* rose-700 */
+  --color-accent: #f43f5e; /* rose-500 */
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-900 bg-[#fcfcfc] transition-colors duration-300;
+  }
+  
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-50;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md border border-primary/10 shadow-sm transition-all;
+  }
+  
+  .sidebar-item-active {
+    @apply bg-gradient-to-r from-primary/10 to-primary/5 border-l-4 border-primary text-primary font-bold;
+  }
+}
